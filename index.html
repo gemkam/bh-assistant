@@ -5,43 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Beaconhouse AI Assistant</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #002D62; }
+        /* Zero out margins to prevent scrolling issues */
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #002147; }
         
-        /* The Header Mask hides the top of the Vapi interface */
+        /* Fixed Header using your specific Oxford Blue */
         .header-mask {
-            position: absolute;
+            position: fixed;
             top: 0; left: 0; width: 100%; height: 80px;
-            background: #002D62; /* Official School Blue */
+            background-color: #002147; 
             display: flex; align-items: center; justify-content: center;
-            z-index: 999; 
-            border-bottom: 3px solid #FFD700; /* School Gold Accent */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            z-index: 1000; 
+            border-bottom: 3px solid #FFD700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         .header-mask img { height: 50px; margin-right: 15px; }
-        .header-mask h1 { color: white; font-size: 20px; font-family: 'Segoe UI', sans-serif; margin: 0; font-weight: 600; }
+        .header-mask h1 { color: white; font-size: 18px; font-family: sans-serif; margin: 0; text-transform: uppercase; }
 
-        /* Full Screen Iframe positioned to mask the Vapi branding */
+        /* The Container for Vapi */
+        .vapi-container {
+            position: absolute;
+            top: 83px; /* Sits exactly below the header + border */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 83px);
+            background-color: white; /* Temporary white to see if iframe loads */
+        }
+
         iframe { 
             border: none; 
             width: 100%; 
-            height: 100%; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
+            height: 100%;
         }
     </style>
 </head>
 <body>
 
     <div class="header-mask">
-        <!-- Pointing to your GitHub-hosted logo -->
-        <img src="bss.png" alt="Beaconhouse Logo">
+        <img src="bss.png" alt="BSS Logo">
         <h1>BEACONHOUSE AI ASSISTANT</h1>
     </div>
 
-    <!-- Ensure your Vapi share link is here -->
-    <iframe src="http://bit.ly/4t2yfY1"></iframe>
+    <div class="vapi-container">
+        <!-- CRITICAL: Make sure the URL starts with https:// -->
+        <iframe 
+            src="https://vapi.ai?demo=true&shareKey=56d913d4-33f6-4964-8378-4cb3e2efd7cb&assistantId=2308b50f-ad28-4208-8f14-ac7787f95841" 
+            allow="microphone"
+            allowfullscreen>
+        </iframe>
+    </div>
 
 </body>
 </html>
