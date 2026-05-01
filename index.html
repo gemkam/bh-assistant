@@ -2,45 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Beaconhouse AI Assistant</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; background-color: #002147; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; }
+        /* Using the Oxford Blue from your image */
+        body, html { 
+            margin: 0; padding: 0; height: 100%; width: 100%; 
+            background-color: #002147; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            color: white; text-align: center; 
+        }
         
-        .logo-container { margin-bottom: 30px; }
-        .logo-container img { height: 100px; border-bottom: 3px solid #FFD700; padding-bottom: 15px; }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            width: 85%;
+            max-width: 400px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
 
-        h1 { font-size: 24px; letter-spacing: 1px; margin-bottom: 10px; }
-        p { font-size: 16px; color: #cbd5e0; margin-bottom: 40px; padding: 0 20px; }
+        .logo-container { margin-bottom: 25px; }
+        .logo-container img { height: 100px; }
+
+        .divider {
+            width: 50px;
+            height: 3px;
+            background-color: #FFD700; /* School Gold */
+            margin: 15px auto;
+        }
+
+        h1 { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 400; text-transform: uppercase; }
+        p { font-size: 14px; color: #a0aec0; margin-bottom: 35px; line-height: 1.5; }
 
         .launch-btn {
-            background-color: #FFD700; /* School Gold */
-            color: #002147; /* School Blue */
-            padding: 18px 35px;
+            display: inline-block;
+            background-color: #FFD700;
+            color: #002147;
+            padding: 18px 40px;
             font-size: 18px;
             font-weight: bold;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
+            box-shadow: 0 10px 20px rgba(255, 214, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
-        .launch-btn:active { transform: scale(0.95); }
+        .launch-btn:active { transform: scale(0.95); background-color: #ffffff; }
+
+        .footer-note { margin-top: 30px; font-size: 10px; color: #4a5568; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <div class="logo-container">
-        <img src="bss.png" alt="Beaconhouse Logo">
+    <div class="card">
+        <div class="logo-container">
+            <!-- Ensure your logo file is named exactly bss-logo.png in GitHub -->
+            <img src="bss.png" alt="BSS Logo">
+        </div>
+        
+        <h1>AI Assistant</h1>
+        <div class="divider"></div>
+        <p>Welcome to the Beaconhouse School System Voice Portal. Press start to begin your session.</p>
+
+        <!-- REPLACE 'YOUR_VAPI_LINK' with your real Public Demo URL -->
+        <a href="https://vapi.ai?demo=true&shareKey=56d913d4-33f6-4964-8378-4cb3e2efd7cb&assistantId=2308b50f-ad28-4208-8f14-ac7787f95841" class="launch-btn">START SESSION</a>
     </div>
 
-    <h1>BEACONHOUSE AI ASSISTANT</h1>
-    <p>Secure Voice Gateway for Parents & Staff</p>
-
-    <!-- Replace the URL below with your actual Vapi Public Link -->
-    <a href="https://vapi.ai?demo=true&shareKey=56d913d4-33f6-4964-8378-4cb3e2efd7cb&assistantId=2308b50f-ad28-4208-8f14-ac7787f95841" class="launch-btn">START CONVERSATION</a>
+    <div class="footer-note">POWERED BY K&S TECH AI</div>
 
 </body>
 </html>
